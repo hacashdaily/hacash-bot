@@ -200,7 +200,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     "Content-Type": "application/json"
                 },
                 json={
-                    "model": "llama3-70b-8192",
+                    "model": "llama-3.3-70b-versatile",
                     "messages": [
                         {
                             "role": "system",
@@ -216,8 +216,17 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 }
             )
             
+            print(f"Groq status: {response.status_code}")
             data = response.json()
-            ai_response = data["choices"][0]["message"]["content"]
+            print(f"Groq response: {data}")
+            
+            if "choices" in data and len(data["choices"]) > 0:
+                ai_response = data["choices"][0]["message"]["content"]
+            elif "error" in data:
+                print(f"Groq error: {data['error']}")
+                ai_response = "Üzgünüm, şu an bir sorun yaşıyorum. Lütfen tekrar dene. 🙏"
+            else:
+                ai_response = "Üzgünüm, şu an bir sorun yaşıyorum. Lütfen tekrar dene. 🙏"
             
     except Exception as e:
         ai_response = "Üzgünüm, şu an bir sorun yaşıyorum. Lütfen tekrar dene. 🙏"
