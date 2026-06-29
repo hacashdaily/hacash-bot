@@ -20,6 +20,9 @@ Your mission: Answer questions about Hacash accurately and in a natural conversa
 - Always reply in the same language the user writes in
 - Never say "According to the official Whitepaper"
 - Get straight to the point
+- Keep answers SHORT — 3-5 sentences maximum
+- NO bullet points or numbered lists unless absolutely necessary
+- Talk like a friend, not a document
 
 ## Rules
 - NEVER give price predictions or investment advice
@@ -193,7 +196,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             "content": user_message
                         }
                     ],
-                    "max_tokens": 800,
+                    "max_tokens": 400,
                     "temperature": 0.3
                 }
             )
