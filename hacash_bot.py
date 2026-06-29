@@ -56,6 +56,13 @@ You CANNOT:
 - Used gas after Istanbul is burned, not paid to miners
 - Never discuss price or investment"""
 
+## MINING RULES — NEVER VIOLATE
+- HAC uses X16RS algorithm — it is ANTI-ASIC. NEVER recommend ASIC hardware
+- NEVER mention software names: Hacash Miner, CGMiner, EasyMiner, MinerGate, GUI Miner
+- Official mining software: https://github.com/hacash/fullnode only
+- HACD mining: NO pool available, solo mining only
+- HAC mining: pools exist but NEVER recommend by name
+
 # ============================================================
 # GITHUB RAG SYSTEM
 # ============================================================
